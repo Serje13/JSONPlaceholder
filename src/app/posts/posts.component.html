@@ -1,0 +1,5 @@
+<mat-nav-list *ngFor="let post of posts">
+  <a mat-list-item routerLink="/posts/{{post.id}}">
+    <p matLine>{{post.id}}. {{post.title}}</p>
+  </a>
+</mat-nav-list>

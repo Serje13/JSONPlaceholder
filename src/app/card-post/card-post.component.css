@@ -1,0 +1,6 @@
+.container {
+  display: flex;
+}
+.buttons {
+  min-width: 200px;
+}
