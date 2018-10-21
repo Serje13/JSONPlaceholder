@@ -1,0 +1,13 @@
+<mat-card>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="NewUser" (keyup)="onKey($event)">
+  </mat-form-field>
+  <button mat-button color="primary" (click)="newU()">AddUser</button>
+</mat-card>
+<div class="container">
+  <mat-nav-list role="list" *ngFor="let user of users">
+    <a mat-list-item routerLink="{{user.id}}">
+      <p matLine>{{user.name}}</p>
+    </a>
+  </mat-nav-list>
+</div>

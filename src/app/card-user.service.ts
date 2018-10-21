@@ -14,6 +14,15 @@ export class CardUserService {
     return this.http.get(`https://jsonplaceholder.typicode.com/posts/${id}`);
   }
   getComments(id) {
-    return this.http.get(`https://jsonplaceholder.typicode.com/comments?postId=${id}`);
+    return this.http.get(`https://jsonplaceholder.typicode.com/posts/${id}/comments`);
+  }
+  getUserFrom(id) {
+    return this.http.get(`http://localhost:3000/users/${id}`);
+  }
+  getPostFrom(id) {
+    return this.http.get(`http://localhost:3000/posts/${id}`);
+  }
+  getCommentsFrom(postId) {
+    return this.http.get(`http://localhost:3000/comments?postId=${postId}`);
   }
 }

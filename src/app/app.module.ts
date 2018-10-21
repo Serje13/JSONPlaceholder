@@ -16,13 +16,23 @@ import { UsersComponent } from './users/users.component';
 import { PostsComponent } from './posts/posts.component';
 import { CardPostComponent } from './card-post/card-post.component';
 import { MatCardModule } from '@angular/material/card';
+import { UsersFromServerComponent } from './users-from-server/users-from-server.component';
+import { UserFromServerComponent } from './user-from-server/user-from-server.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { PostsFromServerComponent } from './posts-from-server/posts-from-server.component';
+import { PostFromServerComponent } from './post-from-server/post-from-server.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'users', component: UsersComponent },
   { path: 'users/:id', component: CardUsersComponent },
   { path: 'posts', component: PostsComponent },
-  { path: 'posts/:id', component: CardPostComponent }
+  { path: 'posts/:id', component: CardPostComponent },
+  { path: 'fromserver/users', component: UsersFromServerComponent },
+  { path: 'fromserver/users/:id', component: UserFromServerComponent },
+  { path: 'fromserver/posts', component: PostsFromServerComponent },
+  { path: 'fromserver/posts/:id', component: PostFromServerComponent }
 ];
 
 @NgModule({
@@ -33,7 +43,11 @@ const appRoutes: Routes = [
     HeaderComponent,
     UsersComponent,
     PostsComponent,
-    CardPostComponent
+    CardPostComponent,
+    UsersFromServerComponent,
+    UserFromServerComponent,
+    PostsFromServerComponent,
+    PostFromServerComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +57,9 @@ const appRoutes: Routes = [
     MatListModule,
     RouterModule.forRoot(appRoutes),
     MatToolbarModule,
-    MatCardModule
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,13 @@
+<mat-card>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="NewPost" (keyup)="onKey($event)">
+  </mat-form-field>
+  <button mat-button (click)="newU()">AddPost</button>
+</mat-card>
+<div class="container">
+  <mat-nav-list role="list" *ngFor="let post of posts">
+    <a mat-list-item routerLink="{{post.id}}">
+      <p matLine>{{post.title}}</p>
+    </a>
+  </mat-nav-list>
+</div>

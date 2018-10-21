@@ -1,0 +1,20 @@
+<mat-card *ngIf="postF">
+  <mat-card-title>{{postF.title}}</mat-card-title>
+  <mat-card-content>
+    {{postF.description}}
+  </mat-card-content>
+  <div class="container">
+    <mat-card-actions class="buttons">
+      <a mat-button color="primary" routerLink="/fromserver/users/{{postF.authorId}}">Show Author</a>
+    </mat-card-actions>
+    <br>
+    <mat-card-actions class="buttons">
+      <button mat-button color="primary" (click)="getCommentsF(postF.id)">Show Comments</button>
+    </mat-card-actions>
+  </div>
+</mat-card>
+<mat-list role="list" *ngFor="let comment of comments">
+  <mat-list-item role="listitem">
+    {{comment.id}}. {{comment.msg}}
+  </mat-list-item>
+</mat-list>
